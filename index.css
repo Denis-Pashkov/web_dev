@@ -1,10 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #content {
     height: 510px;
     width: 260px;
     border: 5px color rgb(66, 66, 66);
 }
 
-#table {
-    height: 510px;
-    width: 210px;
+#display {
+    height: 65px;
+    border: solid lightslategray 2px;
 }
+
+#table td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    border: solid red 2px;
+}
+
+#perc {}
+
+#cancel {
+    width: 51px;
+    text-align: center;
+}
+
+
+/* #id1 {
+    margin: 5px auto;
+    border: solid red 2px;
+} */
