@@ -2,16 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="index.js"></script>
+        <script src="index.js" defer></script>
         <link rel="stylesheet" href="index.css">
         <title>Калькулятор</title>
     </head>
 
-    <body>
+    <body onload="fun_onload()">
         <div id="content">
             <div>
-                <input type="text" id="text1">
+                <input type="text" id="display" onmouseover="fun_check_zero(this)" onmouseout ="fun_check_empty(this)"/>
             </div>
             <table id="table">
                 <tr id="id1">
@@ -27,8 +26,8 @@
                 </tr>
                 <tr>
                     <td id="num" onclick="reg_and_print(this)">7</td>
-                    <td id="num" onclick="reg_and_print(this)">5</td>
-                    <td id="num" onclick="reg_and_print(this)">6</td>
+                    <td id="num" onclick="reg_and_print(this)">8</td>
+                    <td id="num" onclick="reg_and_print(this)">9</td>
                     <td id="spec" onclick="click_operations(this)">*</td>
                 </tr>
                 <tr>
