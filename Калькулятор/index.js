@@ -70,7 +70,7 @@ function check_simbol_exist(simbol, this_type) {
                 } else if ((counter >= 1) && (this_type == 'op') && (display.value.split(' ').length >= 2)) {
                     break;
                 }
-            } else if ((counter == 0) && (i == (display.value.length - 1))) {
+            } else if (((counter == 0) || (counter == 1)) && (i == (display.value.length - 1))) {
                 if (this_type == 'un') {
                     let check_simbol_in_arr = 0;
                     for (let i = 0; i < arr.length; i++) {
@@ -79,7 +79,23 @@ function check_simbol_exist(simbol, this_type) {
                         }
                     }
                     if ((check_simbol_in_arr == 1) && (display.value.split(' ')[2] != '')) {
-                        display.value = display.value + simbol;
+                        if ((simbol == '.') && (counter == 0)) {
+                            display.value = display.value + simbol;
+                        } else if ((simbol == '.') && (counter == 1)) {
+                            k = 0;
+                            arr_split = display.value.split(' ');
+                            for (let i = 0; i < arr_split.length; i++) {
+                                if (String(arr_split[2]).indexOf('.')) {
+                                    k == 1;
+                                    break;
+                                }
+                            }
+                            if (k != 1) {
+                                display.value = display.value + simbol;
+                            }
+                        } else {
+                            display.value = display.value + simbol;
+                        }
                     } else if (check_simbol_in_arr == 0) {
                         display.value = display.value + simbol;
                     }
@@ -88,6 +104,7 @@ function check_simbol_exist(simbol, this_type) {
                     for (let i = 0; i < display.value.length; i++) {
                         for (let j = 0; j < arr.length; j++) {
                             if (display.value[i] == arr[j]) {
+                                console.log(arr[j], display.value.split(' ').length)
                                 if ((arr[j] == '-') && (display.value.split(' ').length == 1)) {
                                     continue;
                                 } else {
@@ -104,8 +121,8 @@ function check_simbol_exist(simbol, this_type) {
                 }
             }
         }
-    } else if ((display.value.split(' ').length == 1) && (simbol == '-')) {
-        display.value = display.value * (-1);
+    } else if ((display.value == '0') && (simbol == '.')) {
+        display.value = display.value + simbol;
     }
 };
 
