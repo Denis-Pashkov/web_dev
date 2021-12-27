@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="index.js" defer></script>
+        <link rel="stylesheet" href="index.css">
+        <title>Калькулятор</title>
+    </head>
+
+    <body onload="fun_onload()">
+        <div id="content">
+            <div>
+                <input type="text" id="display" onmouseover="fun_check_zero(this)" onmouseout ="fun_check_empty(this)"/>
+            </div>
+            <table id="table">
+                <tr id="id1">
+                    <td id="spec" onclick="click_operations(this)">%</td>
+                    <td id="spec" colspan="2" onclick="clear_display()">C</td>
+                    <td id="spec" onclick="fun_del_symbol()"><==</td>
+                </tr>
+                <tr>
+                    <td id="spec" onclick="for_one(this)">1/x</td>
+                    <td id="spec" onclick="degree(this)">x<sup>2</sup></td>
+                    <td id="spec" onclick="sqrt(this)"><sup>2</sup><span>&#8730;</span><span style="border-top: 1px solid black ">x</span></td>
+                    <td id="spec" onclick="click_operations(this)">/</td>
+                </tr>
+                <tr>
+                    <td id="num" onclick="reg_and_print(this)">7</td>
+                    <td id="num" onclick="reg_and_print(this)">8</td>
+                    <td id="num" onclick="reg_and_print(this)">9</td>
+                    <td id="spec" onclick="click_operations(this)">*</td>
+                </tr>
+                <tr>
+                    <td id="num" onclick="reg_and_print(this)">4</td>
+                    <td id="num" onclick="reg_and_print(this)">5</td>
+                    <td id="num" onclick="reg_and_print(this)">6</td>
+                    <td id="spec" onclick="click_operations(this)">-</td>
+                </tr>
+                <tr>
+                    <td id="num" onclick="reg_and_print(this)">1</td>
+                    <td id="num" onclick="reg_and_print(this)">2</td>
+                    <td id="num" onclick="reg_and_print(this)">3</td>
+                    <td id="spec" onclick="click_operations(this)">+</td>
+                </tr>
+                <tr>
+                    <td id="spec" onclick="invert(this)">+/-</td>
+                    <td id="num" onclick="reg_and_print(this)">0</td>
+                    <td id="spec" onclick="dot(this)">.</td>
+                    <td id="spec" onclick="answer()">=</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
