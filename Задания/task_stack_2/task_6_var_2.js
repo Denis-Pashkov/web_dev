@@ -28,11 +28,11 @@ function check_sorted(arr, arr_sort) {
 function find_least(arr, arr_sort) {
     let least;
     let index_least;
-    least = arr[0];
+    least = Number(arr[0]);
     index_least = 0;
     for (let i = 1; i < arr.length; i++) {
-        if (least > arr[i]) {
-            least = arr[i];
+        if (least > Number(arr[i])) {
+            least = Number(arr[i]);
             index_least = i;
         }
     }
